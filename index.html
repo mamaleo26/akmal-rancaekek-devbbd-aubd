@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Akmal </title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI';
+    color:white;
+    overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    padding:20px 40px;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    font-size:16px;
+}
+nav a.active{
+    background:cyan;
+    color:black;
+    border-radius:8px;
+}
+
+/* FULLSCREEN */
+.page{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    text-align:center;
+}
+
+/* VARIASI */
+#home{background:linear-gradient(135deg,#00c6ff,#0072ff);}
+#about{background:linear-gradient(135deg,#ff512f,#dd2476);}
+#skills{background:linear-gradient(135deg,#11998e,#38ef7d);}
+#education{background:#111;}
+#experience{background:linear-gradient(135deg,#654ea3,#eaafc8);}
+#portfolio{background:#222;}
+#certificate{background:linear-gradient(135deg,#f7971e,#ffd200);}
+#contact{background:linear-gradient(135deg,#000428,#004e92);}
+
+/* HERO */
+.hero img{
+    width:220px;
+    border-radius:50%;
+    margin-bottom:20px;
+}
+
+/* FLEX */
+.flex{
+    display:flex;
+    gap:60px;
+    align-items:center;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,0.1);
+    padding:50px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    max-width:1000px;
+    width:100%;
+}
+
+/* BUTTON */
+button{
+    padding:15px 30px;
+    font-size:18px;
+    background:cyan;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+/* SKILL */
+.bar{
+    background:#333;
+    border-radius:10px;
+}
+.bar div{
+    height:12px;
+    width:0;
+    background:cyan;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+.box{
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:15px;
+    font-size:18px;
+    transition:0.3s;
+}
+.box:hover{
+    transform:scale(1.1);
+}
+
+/* TIMELINE */
+.timeline{
+    border-left:3px solid white;
+    padding-left:20px;
+    text-align:left;
+}
+
+/* SOSMED BUTTON BESAR */
+.sosmed a{
+    display:block;
+    margin:15px 0;
+    padding:18px;
+    font-size:18px;
+    background:white;
+    color:black;
+    border-radius:12px;
+    text-decoration:none;
+    transition:0.3s;
+}
+.sosmed a:hover{
+    background:cyan;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .flex{
+        flex-direction:column;
+    }
+    nav ul{
+        flex-wrap:wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>Akmal</h2>
+<ul>
+<li><a href="#" class="menu active" data-target="home">Home</a></li>
+<li><a href="#" class="menu" data-target="about">About</a></li>
+<li><a href="#" class="menu" data-target="skills">Skills</a></li>
+<li><a href="#" class="menu" data-target="education">Education</a></li>
+<li><a href="#" class="menu" data-target="experience">Experience</a></li>
+<li><a href="#" class="menu" data-target="portfolio">Portfolio</a></li>
+<li><a href="#" class="menu" data-target="certificate">Certificates</a></li>
+<li><a href="#" class="menu" data-target="contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page hero">
+<div>
+<img src="img/profile.jpg">
+<h1>Akmal Syarif</h1>
+<p>Creative Web Developer</p>
+<button class="menu" data-target="about">Mulai</button>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+<div class="flex card">
+<img src="img/profile.jpg" width="220">
+<div>
+<h2>Tentang Saya</h2>
+<p>Saya adalah developer yang membuat website modern, sistem informasi, dan UI menarik.</p>
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="page">
+<div class="card">
+<h2>Skills</h2>
+
+<p>HTML</p>
+<div class="bar"><div data-width="90%"></div></div>
+
+<p>CSS</p>
+<div class="bar"><div data-width="85%"></div></div>
+
+<p>JavaScript</p>
+<div class="bar"><div data-width="80%"></div></div>
+
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="page">
+<div class="card timeline">
+<h2>Pendidikan</h2>
+<p>SMK Pasundan Rancaekek - RPL</p>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="page">
+<div class="card timeline">
+<h2>Pengalaman</h2>
+<p>PKL Web Developer</p>
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="page">
+<div class="grid">
+<div class="box">Website Sekolah</div>
+<div class="box">Dashboard Admin</div>
+<div class="box">Sistem Informasi</div>
+</div>
+</section>
+
+<!-- CERTIFICATE -->
+<section id="certificate" class="page">
+<div class="card">
+<h2>Sertifikat</h2>
+<p>Web Development</p>
+<p>UI Design</p>
+</div>
+</section>
+
+<!-- CONTACT SOSMED -->
+<section id="contact" class="page">
+<div class="card sosmed">
+<h2>Hubungi Saya</h2>
+
+<a href="https://instagram.com/" target="_blank">📸 Instagram</a>
+<a href="https://tiktok.com/" target="_blank">🎵 TikTok</a>
+<a href="https://wa.me/6281234567890" target="_blank">💬 WhatsApp</a>
+
+</div>
+</section>
+
+<script>
+$(document).ready(function(){
+
+$(".page").hide();
+$("#home").show();
+
+$(".menu").click(function(e){
+    e.preventDefault();
+
+    let target=$(this).data("target");
+
+    $(".menu").removeClass("active");
+    $(this).addClass("active");
+
+    $(".page").fadeOut(200);
+    $("#"+target).delay(200).fadeIn(400);
+
+    if(target==="skills"){
+        $(".bar div").each(function(){
+            let w=$(this).data("width");
+            $(this).animate({width:w},1000);
+        });
+    }
+});
+
+});
+</script>
+
+</body>
+</html>
