@@ -1,294 +1,78 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV Akmal </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akmal Portfolio | Professional CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        :root { --p: #6366f1; --bg: #0f172a; --g: rgba(255,255,255,0.05); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Plus Jakarta Sans', sans-serif; background:var(--bg); color:#fff; overflow-x:hidden; }
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        /* Navigation */
+        nav { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:rgba(15,23,42,0.9); backdrop-filter:blur(10px); padding:8px 15px; border-radius:50px; border:1px solid rgba(255,255,255,0.1); z-index:1000; display:flex; gap:5px; box-shadow:0 10px 30px rgba(0,0,0,0.5); max-width:95vw; overflow-x:auto; scrollbar-width:none; }
+        nav a { text-decoration:none; color:#94a3b8; padding:10px 18px; border-radius:30px; font-weight:600; font-size:0.85rem; transition:0.3s; white-space:nowrap; display:flex; align-items:center; gap:8px; }
+        nav a.active { background:var(--p); color:#fff; }
 
-<style>
-body{
-    margin:0;
-    font-family:'Segoe UI';
-    color:white;
-    overflow-x:hidden;
-}
+        /* Area Konten */
+        main { padding:40px 5% 120px 5%; min-height:100vh; display:flex; justify-content:center; align-items:center; width:100%; }
+        #content-area { width:100%; max-width:1100px; }
 
-/* NAV */
-nav{
-    position:fixed;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    padding:20px 40px;
-    background:rgba(0,0,0,0.7);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-}
-nav ul{
-    display:flex;
-    gap:20px;
-    list-style:none;
-}
-nav a{
-    color:white;
-    text-decoration:none;
-    padding:12px 18px;
-    font-size:16px;
-}
-nav a.active{
-    background:cyan;
-    color:black;
-    border-radius:8px;
-}
-
-/* FULLSCREEN */
-.page{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:40px;
-    text-align:center;
-}
-
-/* VARIASI */
-#home{background:linear-gradient(135deg,#00c6ff,#0072ff);}
-#about{background:linear-gradient(135deg,#ff512f,#dd2476);}
-#skills{background:linear-gradient(135deg,#11998e,#38ef7d);}
-#education{background:#111;}
-#experience{background:linear-gradient(135deg,#654ea3,#eaafc8);}
-#portfolio{background:#222;}
-#certificate{background:linear-gradient(135deg,#f7971e,#ffd200);}
-#contact{background:linear-gradient(135deg,#000428,#004e92);}
-
-/* HERO */
-.hero img{
-    width:220px;
-    border-radius:50%;
-    margin-bottom:20px;
-}
-
-/* FLEX */
-.flex{
-    display:flex;
-    gap:60px;
-    align-items:center;
-}
-
-/* CARD */
-.card{
-    background:rgba(255,255,255,0.1);
-    padding:50px;
-    border-radius:20px;
-    backdrop-filter:blur(10px);
-    max-width:1000px;
-    width:100%;
-}
-
-/* BUTTON */
-button{
-    padding:15px 30px;
-    font-size:18px;
-    background:cyan;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    margin-top:15px;
-}
-
-/* SKILL */
-.bar{
-    background:#333;
-    border-radius:10px;
-}
-.bar div{
-    height:12px;
-    width:0;
-    background:cyan;
-}
-
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-.box{
-    background:white;
-    color:black;
-    padding:30px;
-    border-radius:15px;
-    font-size:18px;
-    transition:0.3s;
-}
-.box:hover{
-    transform:scale(1.1);
-}
-
-/* TIMELINE */
-.timeline{
-    border-left:3px solid white;
-    padding-left:20px;
-    text-align:left;
-}
-
-/* SOSMED BUTTON BESAR */
-.sosmed a{
-    display:block;
-    margin:15px 0;
-    padding:18px;
-    font-size:18px;
-    background:white;
-    color:black;
-    border-radius:12px;
-    text-decoration:none;
-    transition:0.3s;
-}
-.sosmed a:hover{
-    background:cyan;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-    .flex{
-        flex-direction:column;
-    }
-    nav ul{
-        flex-wrap:wrap;
-    }
-}
-</style>
+        /* Style Kartu (Global untuk semua halaman luar) */
+        .glass-card { background:var(--g); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.1); border-radius:30px; padding:40px; animation:fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+    </style>
 </head>
-
 <body>
 
-<nav>
-<h2>Akmal</h2>
-<ul>
-<li><a href="#" class="menu active" data-target="home">Home</a></li>
-<li><a href="#" class="menu" data-target="about">About</a></li>
-<li><a href="#" class="menu" data-target="skills">Skills</a></li>
-<li><a href="#" class="menu" data-target="education">Education</a></li>
-<li><a href="#" class="menu" data-target="experience">Experience</a></li>
-<li><a href="#" class="menu" data-target="portfolio">Portfolio</a></li>
-<li><a href="#" class="menu" data-target="certificate">Certificates</a></li>
-<li><a href="#" class="menu" data-target="contact">Contact</a></li>
-</ul>
+<main>
+    <div id="content-area">
+        </div>
+</main>
+
+<nav id="navbar">
+    <a href="#" data-page="home" class="active"><i class="fas fa-home"></i> Home</a>
+    <a href="#" data-page="about"><i class="fas fa-user"></i> About</a>
+    <a href="#" data-page="skills"><i class="fas fa-code"></i> Skills</a>
+    <a href="#" data-page="education"><i class="fas fa-graduation-cap"></i> Edu</a>
+    <a href="#" data-page="experience"><i class="fas fa-briefcase"></i> Project</a>
+    <a href="#" data-page="contact"><i class="fas fa-envelope"></i> Contact</a>
 </nav>
 
-<!-- HOME -->
-<section id="home" class="page hero">
-<div>
-<img src="img/profile.jpg">
-<h1>Akmal Syarif</h1>
-<p>Creative Web Developer</p>
-<button class="menu" data-target="about">Mulai</button>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="page">
-<div class="flex card">
-<img src="img/profile.jpg" width="220">
-<div>
-<h2>Tentang Saya</h2>
-<p>Saya adalah developer yang membuat website modern, sistem informasi, dan UI menarik.</p>
-</div>
-</div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="page">
-<div class="card">
-<h2>Skills</h2>
-
-<p>HTML</p>
-<div class="bar"><div data-width="90%"></div></div>
-
-<p>CSS</p>
-<div class="bar"><div data-width="85%"></div></div>
-
-<p>JavaScript</p>
-<div class="bar"><div data-width="80%"></div></div>
-
-</div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" class="page">
-<div class="card timeline">
-<h2>Pendidikan</h2>
-<p>SMK Pasundan Rancaekek - RPL</p>
-</div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience" class="page">
-<div class="card timeline">
-<h2>Pengalaman</h2>
-<p>PKL Web Developer</p>
-</div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio" class="page">
-<div class="grid">
-<div class="box">Website Sekolah</div>
-<div class="box">Dashboard Admin</div>
-<div class="box">Sistem Informasi</div>
-</div>
-</section>
-
-<!-- CERTIFICATE -->
-<section id="certificate" class="page">
-<div class="card">
-<h2>Sertifikat</h2>
-<p>Web Development</p>
-<p>UI Design</p>
-</div>
-</section>
-
-<!-- CONTACT SOSMED -->
-<section id="contact" class="page">
-<div class="card sosmed">
-<h2>Hubungi Saya</h2>
-
-<a href="https://instagram.com/" target="_blank">📸 Instagram</a>
-<a href="https://tiktok.com/" target="_blank">🎵 TikTok</a>
-<a href="https://wa.me/6281234567890" target="_blank">💬 WhatsApp</a>
-
-</div>
-</section>
-
 <script>
-$(document).ready(function(){
+$(document).ready(function() {
+    function loadPage(page) {
+        $("#content-area").fadeOut(200, function() {
+            $.get(page + ".html", function(data) {
+                $("#content-area").html(data).fadeIn(400);
+                if(page === 'contact') initForm(); // Panggil fungsi form jika di contact
+            }).fail(function() {
+                $("#content-area").html("<center><h2>Halaman " + page + ".html Belum Dibuat!</h2></center>").fadeIn();
+            });
+        });
+    }
 
-$(".page").hide();
-$("#home").show();
+    $("#navbar a").click(function(e) {
+        e.preventDefault();
+        $("#navbar a").removeClass("active");
+        $(this).addClass("active");
+        loadPage($(this).data("page"));
+    });
 
-$(".menu").click(function(e){
-    e.preventDefault();
+    loadPage("home"); // Load awal
 
-    let target=$(this).data("target");
-
-    $(".menu").removeClass("active");
-    $(this).addClass("active");
-
-    $(".page").fadeOut(200);
-    $("#"+target).delay(200).fadeIn(400);
-
-    if(target==="skills"){
-        $(".bar div").each(function(){
-            let w=$(this).data("width");
-            $(this).animate({width:w},1000);
+    function initForm() {
+        $("#name").val(localStorage.getItem("nama"));
+        $("#contact-form").on("submit", function(e) {
+            e.preventDefault();
+            localStorage.setItem("nama", $("#name").val());
+            alert("Berhasil disimpan!");
         });
     }
 });
-
-});
 </script>
-
 </body>
 </html>
